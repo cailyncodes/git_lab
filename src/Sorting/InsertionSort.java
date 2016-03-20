@@ -9,7 +9,23 @@ public class InsertionSort {
 	 */
 	public static int[] insertionSort(int[] unsortedArray) {
 		//TODO: S2 implements insertion sort
-		
-		return null;
+	int len = unsortedArray.length;
+	for (int i = 1; i < len; i++){
+		int curr = unsortedArray[i];
+		int counter = 0;
+		// how many are already sorted, aka where should curr be put
+		while (unsortedArray[counter] < curr){
+			counter++;
+		}
+		for (int j = i; j > counter; j--){
+			if (j == 0){ 
+				break;
+			}
+			int temp = unsortedArray[j - 1];
+			unsortedArray[j - 1] = unsortedArray[j];
+			unsortedArray[j] = temp;
+		}
+	}
+    return unsortedArray;
 	}
 }
